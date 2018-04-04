@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "northpasser"
+require "dotenv"
+require "irb"
+
+Dotenv.load
+IRB.start
