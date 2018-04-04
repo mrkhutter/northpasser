@@ -22,6 +22,6 @@ describe Northpasser do
   end
 
   it 'has an API_URL constant defining the base api url' do
-    expect(Northpasser::API_URL).to_not be nil
+    expect(Northpasser::V1_API_URL).to_not be nil
   end
 end
