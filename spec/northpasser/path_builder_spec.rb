@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Northpasser::PathBuilder do
-  let(:new_northpass) { Northpasser::Northpass.new(ENV['API_TOKEN']) }
+  let(:new_northpass) { Northpasser::Northpass.new(ENV['NORTHPASS_API_TOKEN']) }
 
   # since not every example results in an action, we need to clean the path 
   before(:example) do
@@ -12,7 +12,7 @@ describe Northpasser::PathBuilder do
     resource = Northpasser::RESOURCES.sample
     northpass = new_northpass.send(resource)
 
-    expect(northpass).to be_a(Northpass::northpass)
+    expect(northpass).to be_a(Northpasser::Northpass)
     expect(northpass.path).to eq([resource])
   end
 
@@ -21,7 +21,7 @@ describe Northpasser::PathBuilder do
     id = rand(10000)
     northpass = new_northpass.send(resource, id)
 
-    expect(northpass).to be_a(Northpass::northpass)
+    expect(northpass).to be_a(Northpasser::Northpass)
     expect(northpass.path).to eq([resource, id])
   end
 

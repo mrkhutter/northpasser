@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.northpass.com/v1/learners/ac2ae6b6-ab15-41b0-883c-5f536a062689?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.northpass.com
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Date:
+      - Fri, 06 Apr 2018 15:30:58 GMT
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 74a70a52-351b-4b11-9681-fe9680b579cf
+      X-Runtime:
+      - '0.165175'
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Origin
+      X-Rack-Cors:
+      - miss; no-origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 06 Apr 2018 15:30:58 GMT
+recorded_with: VCR 3.0.3

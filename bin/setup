@@ -5,8 +5,8 @@ IFS=$'\n\t'
 bundle install
 
 touch .env
-if [[ $(grep API_TOKEN .env) == "" ]]; then
-  echo "API_TOKEN=<YOUR NORTHPASS API TOKEN>" >> .env
+if [[ $(grep NORTHPASS_API_TOKEN .env) == "" ]]; then
+  echo "NORTHPASS_API_TOKEN=<YOUR NORTHPASS API TOKEN>" >> .env
   echo ;
   echo "DEVELOPER: Please edit .env to contain your northpass api token if you wish to use the console."
   echo ;

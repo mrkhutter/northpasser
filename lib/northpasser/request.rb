@@ -1,4 +1,5 @@
 require 'net/http'
+require 'pry'
 
 module Northpasser
   class Request
@@ -34,7 +35,7 @@ module Northpasser
     private
 
     def validate_input(northpass, action, params)
-      northpass.is_a?(northpass) &&
+      northpass.is_a?(Northpass) &&
         !northpass.path.nil? &&
         !northpass.token.nil? &&
         !northpass.response_format.nil? &&
@@ -43,11 +44,11 @@ module Northpasser
     end
 
     def construct_uri(northpass)
-      base_url = API_URL
+      base_url = V1_API_URL
       path = northpass.path.map(&:to_s).map { |p| p.gsub('_', '-') }.join('/')
       object_id = "/#{self.params.delete(:id)}" if self.params.key?(:id)
       token = northpass.token
-      URI("#{base_url}#{path}#{object_id}?token=#{token}")
+      URI("#{base_url}#{path}#{object_id}?api_key=#{token}")
     end
 
     def set_format_header(req)

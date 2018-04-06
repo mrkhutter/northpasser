@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.northpass.com/v1/learners?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    body:
+      encoding: UTF-8
+      string: '{"data":{"foo":"bar","attributes":{"small":"fries"}}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.northpass.com
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Date:
+      - Fri, 06 Apr 2018 15:30:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 6bee2332-4e7d-462a-a20d-8946445646e0
+      X-Runtime:
+      - '0.027679'
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Origin
+      X-Rack-Cors:
+      - miss; no-origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"status":"422","title":"Invalid Attribute","detail":"can''t
+        be blank","source":{"pointer":"/data/attributes/email"}}]}'
+    http_version: 
+  recorded_at: Fri, 06 Apr 2018 15:30:58 GMT
+recorded_with: VCR 3.0.3

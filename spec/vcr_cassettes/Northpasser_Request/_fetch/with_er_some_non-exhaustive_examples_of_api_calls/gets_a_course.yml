@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.northpass.com/v1/courses/11790b45-3b0c-4105-ab91-b4b3e35c53c7?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.northpass.com
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Date:
+      - Fri, 06 Apr 2018 15:30:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"e41c9f53c6a4a0da4140aab4cd0d47ba"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7d3a13bb-885d-42d1-b1b3-4de7c8f5a317
+      X-Runtime:
+      - '0.083175'
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Origin
+      X-Rack-Cors:
+      - miss; no-origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"courses","id":"11790b45-3b0c-4105-ab91-b4b3e35c53c7","attributes":{"name":"Scheduling","enrollments_count":0,"list_image_url":"https://d3p3alwwakpeoy.cloudfront.net/api/file/pnD6vUv5QyeVxitrYyXa/convert?cache=true\u0026fit=crop\u0026h=500\u0026w=820","course_enrollment_link":"https://shipt.schoolkeep.com/c/b20d883e347735e35bbb96e7ff4e6d08d2c53646","share_course_link":"https://shipt.schoolkeep.com/outline/p4ibygxu/cover","permalink":"p4ibygxu","created_at":"2017-11-10T20:12:21Z","updated_at":"2018-02-20T19:25:00Z"},"relationships":{"categories":{"data":[]},"instructor_partnerships":{"data":[{"type":"instructor_partnerships","id":"c823b52a-bc16-4558-97ab-cb8ceab3a623"}]}},"links":{"self":"https://api.northpass.com/v1/courses/p4ibygxu","teaching":"https://app.northpass.com/courses/p4ibygxu","build":{"href":"https://app.northpass.com/courses/p4ibygxu/builder","methods":["get"]}}}}'
+    http_version: 
+  recorded_at: Fri, 06 Apr 2018 15:30:57 GMT
+recorded_with: VCR 3.0.3
