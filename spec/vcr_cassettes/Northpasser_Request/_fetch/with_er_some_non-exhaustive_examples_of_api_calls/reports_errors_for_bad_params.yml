@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.northpass.com/v1/courses?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    uri: https://api.northpass.com/v1/learners?api_key=IOm5HueZfihdVq3HPDNy0eWfI
     body:
       encoding: UTF-8
-      string: '{"foo":"bar"}'
+      string: '{"data":{"foo":"bar","attributes":{"small":"fries"}}}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -19,23 +19,25 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 422
+      message: Unprocessable Entity
     headers:
       Connection:
       - keep-alive
       Server:
       - nginx
       Date:
-      - Wed, 04 Apr 2018 19:42:19 GMT
+      - Fri, 06 Apr 2018 15:30:58 GMT
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
+      Cache-Control:
+      - no-cache
       X-Request-Id:
-      - 5c2f8690-d081-4699-8f81-d26df9e8bd9a
+      - 6bee2332-4e7d-462a-a20d-8946445646e0
       X-Runtime:
-      - '0.020662'
+      - '0.027679'
       Strict-Transport-Security:
       - max-age=631138519
       X-Content-Type-Options:
@@ -53,32 +55,9 @@ http_interactions:
       Via:
       - 1.1 vegur
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        PCFET0NUWVBFIGh0bWw+CjxodG1sPgogIDxoZWFkPgogICAgPG1ldGEgY2hh
-        cnNldD0ndXRmLTgnIC8+CiAgICA8bWV0YSBuYW1lPSdST0JPVFMnIGNvbnRl
-        bnQ9J05PT0RQJyAvPgogICAgPHRpdGxlPlRoZSBwYWdlIHlvdSB3ZXJlIGxv
-        b2tpbmcgZm9yIGRvZXNu4oCZdCBleGlzdCAoNDA0KTwvdGl0bGU+CiAgICA8
-        bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9m
-        YW1pbHk9Q3JpbXNvbitUZXh0OjYwMCIgbWVkaWE9ImFsbCIgcmVsPSJzdHls
-        ZXNoZWV0IiB0eXBlPSJ0ZXh0L2NzcyI+CgogICAgPHN0eWxlIHR5cGU9InRl
-        eHQvY3NzIj4KICAgICAgaHRtbCwKICAgICAgYm9keSB7CiAgICAgICAgaGVp
-        Z2h0OiAxMDAlOwogICAgICAgIG1hcmdpbjogMDsKICAgICAgICBwYWRkaW5n
-        OiAwOwogICAgICAgIHdpZHRoOiAxMDAlOwogICAgICB9CgogICAgICBib2R5
-        IHsKICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGOwogICAgICAgIGZv
-        bnQtZmFtaWx5OiAiQ3JpbXNvbiBUZXh0Iiwgc2VyaWY7CiAgICAgICAgdGV4
-        dC1hbGlnbjogY2VudGVyOwogICAgICB9CgogICAgICBoMSB7CiAgICAgICAg
-        Y29sb3I6ICMyRDM0MzQ7CiAgICAgICAgZm9udC1zaXplOiAyLjI1ZW07CiAg
-        ICAgICAgZm9udC13ZWlnaHQ6IDYwMDsKICAgICAgfQoKICAgICAgaGVhZGVy
-        IHsKICAgICAgICBwYWRkaW5nLXRvcDogODVweDsKICAgICAgICBwYWRkaW5n
-        LWJvdHRvbTogOTVweDsKICAgICAgICBtYXJnaW4tYm90dG9tOiA2MHB4Owog
-        ICAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjQ0NDOwogICAgICAg
-        IGJhY2tncm91bmQtY29sb3I6ICNmOGY4Zjg7CiAgICAgIH0KCiAgICAgIGlt
-        ZyB7CiAgICAgICAgbWFyZ2luOiAwIGF1dG87CiAgICAgIH0KICAgIDwvc3R5
-        bGU+CiAgPC9oZWFkPgogIDxib2R5PgogICAgPGhlYWRlcj4KICAgICAgPGlt
-        ZyBzcmM9Ii9pbWFnZXMvNDA0LnN2ZyI+CiAgICA8L2hlYWRlcj4KICAgIDxo
-        MT5Tb3JyeSwgdGhlIHBhZ2UgeW914oCZcmUgbG9va2luZyBmb3IgaXMgbm90
-        IGhlcmUuPC9oMT4KICA8L2JvZHk+CjwvaHRtbD4KCg==
+      encoding: UTF-8
+      string: '{"errors":[{"status":"422","title":"Invalid Attribute","detail":"can''t
+        be blank","source":{"pointer":"/data/attributes/email"}}]}'
     http_version: 
-  recorded_at: Wed, 04 Apr 2018 19:42:19 GMT
+  recorded_at: Fri, 06 Apr 2018 15:30:58 GMT
 recorded_with: VCR 3.0.3

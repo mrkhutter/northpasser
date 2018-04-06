@@ -56,25 +56,44 @@ describe Northpasser::Request do
       end
 
       it 'creates a learner', :vcr do
-        northpass = new_northpass.learners.create(type: 'people', attributes: {email: "something@shipt.com"} )
+        northpass = new_northpass.learners.create(data: { type: 'people', attributes: {email: "driver@shipt.com"} })
 
         expect(northpass[:code]).to eq('201')
         expect(northpass[:status]).to eq('Created')
         datagram = northpass[:content]['data']
-        expect(datagram['attributes']['email']).to eq('something@shipt.com')
+        expect(datagram['attributes']['email']).to eq('driver@shipt.com')
         expect(datagram['attributes']['unsubscribed']).to eq(false)
       end
 
-      xit 'updates a category', :vcr do
+      it 'updates a category', :vcr do
+        northpass = new_northpass.categories.update(id: 'ab9ca8a8-14a1-49cb-870c-8cb7e0cf1fd9', data: {attributes: {name: 'silly strings'}})
+
+        expect(northpass[:code]).to eq('200')
+        expect(northpass[:status]).to eq('OK')
+        datagram = northpass[:content]['data']
+        expect(datagram['attributes']['name']).to eq('silly strings')
       end
 
-      xit 'deletes a category', :vcr do
+      it 'deletes a category', :vcr do
+        northpass = new_northpass.learners.delete(id: 'ac2ae6b6-ab15-41b0-883c-5f536a062689')
+
+        expect(northpass[:code]).to eq('204')
+        expect(northpass[:status]).to eq('No Content')
       end
 
-      xit 'reports errors for a missing learners', :vcr do
+      it 'reports errors for a missing learners', :vcr do
+        northpass = new_northpass.courses.get(id: 'samiam')
+
+        expect(northpass[:code]).to eq('404')
+        expect(northpass[:status]).to eq('Not Found')
       end
       
-      xit 'reports errors for bad params', :vcr do
+      it 'reports errors for bad params', :vcr do
+        northpass = new_northpass.learners.create(data: { foo: 'bar', attributes: {small: "fries"} })
+
+        expect(northpass[:code]).to eq('422')
+        expect(northpass[:status]).to eq('Unprocessable Entity')
+        expect(northpass[:content].key?("errors")).to be true
       end
     end
   end

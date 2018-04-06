@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.northpass.com/v1/learners?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    method: put
+    uri: https://api.northpass.com/v1/categories/ab9ca8a8-14a1-49cb-870c-8cb7e0cf1fd9?api_key=IOm5HueZfihdVq3HPDNy0eWfI
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"people","attributes":{"email":"driver@shipt.com"}}}'
+      string: '{"data":{"attributes":{"name":"silly strings"}}}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -19,25 +19,27 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 409
-      message: Conflict
+      code: 200
+      message: OK
     headers:
       Connection:
       - keep-alive
       Server:
       - nginx
       Date:
-      - Fri, 06 Apr 2018 15:30:57 GMT
+      - Fri, 06 Apr 2018 15:30:58 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
+      Etag:
+      - W/"4d432416cba2a38546a0437ddd658fa7"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f006d6b0-98a5-4fd4-ac02-d640a4ffd798
+      - 8aca68c8-9753-465d-80cf-560d4ef28c2b
       X-Runtime:
-      - '0.072985'
+      - '0.029537'
       Strict-Transport-Security:
       - max-age=631138519
       X-Content-Type-Options:
@@ -56,8 +58,8 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":[{"status":"409","title":"Record Not Unique","detail":"A
-        record with the given email has already been taken","meta":{"original":{"uuid":"ac2ae6b6-ab15-41b0-883c-5f536a062689","type":"learners"}},"source":{"pointer":"/data/attributes/email"}}]}'
+      string: '{"data":{"type":"categories","id":"ab9ca8a8-14a1-49cb-870c-8cb7e0cf1fd9","attributes":{"name":"silly
+        strings","created_at":"2018-02-20T19:25:28Z","updated_at":"2018-04-06T15:26:41Z"},"links":{"self":"https://api.northpass.com/v1/categories/ab9ca8a8-14a1-49cb-870c-8cb7e0cf1fd9"}}}'
     http_version: 
-  recorded_at: Fri, 06 Apr 2018 15:30:57 GMT
+  recorded_at: Fri, 06 Apr 2018 15:30:58 GMT
 recorded_with: VCR 3.0.3
