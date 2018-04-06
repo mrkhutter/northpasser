@@ -1,7 +1,7 @@
 # Northpasser
 
 Northpasser is a lightweight Ruby wrapper of the
-[Northpass API](https://app.northpass.com/api/v1/).
+[Northpass API](https://app.northpass.com/api/v1/docs).
 
 [Northpass](https://northpass.com) is a radical project management tool
 particularly well suited to software development. If you're not familiar with
