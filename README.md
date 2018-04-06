@@ -10,7 +10,7 @@ them, go check them out! :heart:
 
 ## Inspiration 
 This gem is heavily inspired by [Philip Castiglione](https://github.com/PhilipCastiglione)'s 
-Ruby [gem](https://github.com/PhilipCastiglione/northpass_ruby) for the northpass API
+Ruby [gem](https://github.com/PhilipCastiglione/clubhouse_ruby) for the Clubhouse API
 
 Philip's restated philosophy on these techniques:
 > ...A good API wrapper is a simpler alternative to a comprehensive client 
