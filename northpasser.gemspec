@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'northpasser/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "northpass"
+  spec.name          = "northpasser"
   spec.version       = Northpasser::VERSION
   spec.authors       = ["Mark Hutter"]
   spec.email         = ["mrkhutter@gmail.com"]
 
   spec.summary       = %q{A lightweight ruby wrapper for the Northpass API: https://northpass.com/api/v1}
-  spec.homepage      = "https://github.com/mrkhutter/northpass"
+  spec.homepage      = "https://github.com/mrkhutter/northpasser"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
