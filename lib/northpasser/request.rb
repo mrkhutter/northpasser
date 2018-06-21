@@ -1,5 +1,4 @@
 require 'net/http'
-require 'pry'
 
 module Northpasser
   class Request
