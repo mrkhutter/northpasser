@@ -1,11 +1,11 @@
 require "northpasser/version"
-require "northpasser/constants"
-require "northpasser/path_builder"
-require "northpasser/request"
+require "northpasser/v1/constants"
+require "northpasser/v1/path_builder"
+require "northpasser/v1/request"
 
 module Northpasser
   class Northpass
-    include PathBuilder
+    include V1::PathBuilder
 
     attr_accessor :token, :response_format
 

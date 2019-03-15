@@ -1,12 +1,12 @@
 require 'spec_helper'
 require 'pry'
 
-describe Northpasser::Request do
+describe Northpasser::V1::Request do
   let(:new_northpass) { Northpasser::Northpass.new(ENV['NORTHPASS_API_TOKEN']) }
 
   describe '.new' do
     before(:example) do
-      # Request requires the northpass object to have a path
+      # V1::Request requires the northpass object to have a path
       new_northpass.clear_path
       new_northpass.courses
     end
@@ -19,7 +19,7 @@ describe Northpasser::Request do
       expect { described_class.new(new_northpass, action: :foo) }.to raise_error(ArgumentError)
     end
 
-    it 'returns a new northpass::Request object if successful' do
+    it 'returns a new northpass::V1::Request object if successful' do
       expect(described_class.new(new_northpass, action: :Get)).to be_a(described_class)
     end
   end

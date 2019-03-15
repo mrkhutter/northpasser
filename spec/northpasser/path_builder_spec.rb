@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Northpasser::PathBuilder do
+describe Northpasser::V1::PathBuilder do
   let(:new_northpass) { Northpasser::Northpass.new(ENV['NORTHPASS_API_TOKEN']) }
 
   # since not every example results in an action, we need to clean the path 
