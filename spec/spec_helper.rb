@@ -3,6 +3,8 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'dotenv'
 require 'vcr'
 require 'json'
+require 'simplecov'
+SimpleCov.start
 
 # Loads the contents of .env into ENV
 # https://github.com/bkeepers/dotenv
