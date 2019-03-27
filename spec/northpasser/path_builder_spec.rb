@@ -9,7 +9,7 @@ describe Northpasser::V1::PathBuilder do
   end
 
   it 'allows you to build a path to a known resource' do
-    resource = Northpasser::RESOURCES.sample
+    resource = Northpasser::V1::RESOURCES.sample
     northpass = new_northpass.send(resource)
 
     expect(northpass).to be_a(Northpasser::Northpass)
@@ -17,7 +17,7 @@ describe Northpasser::V1::PathBuilder do
   end
 
   it 'allows you to add an id to a nested resources parent' do
-    resource = Northpasser::RESOURCES.sample
+    resource = Northpasser::V1::RESOURCES.sample
     id = rand(10000)
     northpass = new_northpass.send(resource, id)
 
@@ -26,7 +26,7 @@ describe Northpasser::V1::PathBuilder do
   end
 
   it 'allows you to clear a partially built path' do
-    resource = Northpasser::RESOURCES.sample
+    resource = Northpasser::V1::RESOURCES.sample
     northpass = new_northpass.send(resource)
     northpass.clear_path
 
@@ -34,8 +34,8 @@ describe Northpasser::V1::PathBuilder do
   end
 
   it 'recognizes and executes known actions, clearing the path' do
-    resource = Northpasser::RESOURCES.sample
-    action = Northpasser::ACTIONS.keys.sample
+    resource = Northpasser::V1::RESOURCES.sample
+    action = Northpasser::V1::ACTIONS.keys.sample
     northpass = new_northpass.send(resource)
 
     expect(Net::HTTP).to receive(:start)
@@ -46,8 +46,8 @@ describe Northpasser::V1::PathBuilder do
   end
 
   it 'recognizes known exceptions, builds the path, then executes' do
-    resource = Northpasser::RESOURCES.sample
-    exception = Northpasser::EXCEPTIONS.keys.sample
+    resource = Northpasser::V1::RESOURCES.sample
+    exception = Northpasser::V1::EXCEPTIONS.keys.sample
     northpass = new_northpass.send(resource)
 
     expect(Net::HTTP).to receive(:start)
@@ -58,18 +58,18 @@ describe Northpasser::V1::PathBuilder do
   end
 
   it 'responds to known actions' do
-    action = Northpasser::ACTIONS.keys.sample
+    action = Northpasser::V1::ACTIONS.keys.sample
 
     expect(new_northpass.respond_to?(action)).to be true
   end
 
   it 'responds to known resources' do
-    resource = Northpasser::RESOURCES.sample
+    resource = Northpasser::V1::RESOURCES.sample
     expect(new_northpass.respond_to?(resource)).to be true
   end
 
   it 'responds to known exceptions' do
-    resource = Northpasser::EXCEPTIONS.keys.sample
+    resource = Northpasser::V1::EXCEPTIONS.keys.sample
     expect(new_northpass.respond_to?(resource)).to be true
   end
 

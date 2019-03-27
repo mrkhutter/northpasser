@@ -22,7 +22,7 @@ module Northpasser
     private
 
     def input_valid?(token, response_format)
-      !token.nil? && FORMATS.keys.include?(response_format)
+      !token.nil? && V1::FORMATS.keys.include?(response_format)
     end
   end
 end
