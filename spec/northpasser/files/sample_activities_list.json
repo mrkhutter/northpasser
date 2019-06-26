@@ -1,0 +1,27 @@
+{
+ "links": {
+    "self": "https://api.northpass.com/v2/courses/ea210647-aa59-49c1-85d1-5cae0ea6eed0/activities"
+  },
+  "data": [
+    {
+      "type": "activities",
+      "id": "b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5",
+      "attributes": {
+        "title": "Welcome to Northpass"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5"
+      }
+    },
+    {
+      "type": "activities",
+      "id": "95f17021-4a9b-4578-877c-0edb2f092097",
+      "attributes": {
+        "title": "How to build an effective course"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/95f17021-4a9b-4578-877c-0edb2f092097"
+      }
+    }
+  ]
+}

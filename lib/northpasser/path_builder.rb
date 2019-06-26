@@ -63,7 +63,7 @@ module Northpasser
     end
 
     def known_resource?(name)
-      RESOURCES.include?(name)
+      V1_RESOURCES.include?(name) || V2_RESOURCE.include?(name)
     end
 
     def known_exception?(name)
