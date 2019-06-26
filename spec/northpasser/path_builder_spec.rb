@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe Northpasser::PathBuilder do
   let(:new_northpass) { Northpasser::Northpass.new(ENV['NORTHPASS_API_TOKEN']) }
@@ -9,7 +10,8 @@ describe Northpasser::PathBuilder do
   end
 
   it 'allows you to build a path to a known resource' do
-    resource = Northpasser::RESOURCES.sample
+    resources_set = [Northpasser::V1_RESOURCES, Northpasser::V2_RESOURCES].sample
+    resource = resources_set.sample
     northpass = new_northpass.send(resource)
 
     expect(northpass).to be_a(Northpasser::Northpass)
@@ -17,7 +19,8 @@ describe Northpasser::PathBuilder do
   end
 
   it 'allows you to add an id to a nested resources parent' do
-    resource = Northpasser::RESOURCES.sample
+    resources_set = [Northpasser::V1_RESOURCES, Northpasser::V2_RESOURCES].sample
+    resource = resources_set.sample
     id = rand(10000)
     northpass = new_northpass.send(resource, id)
 
@@ -26,7 +29,8 @@ describe Northpasser::PathBuilder do
   end
 
   it 'allows you to clear a partially built path' do
-    resource = Northpasser::RESOURCES.sample
+    resources_set = [Northpasser::V1_RESOURCES, Northpasser::V2_RESOURCES].sample
+    resource = resources_set.sample
     northpass = new_northpass.send(resource)
     northpass.clear_path
 
@@ -34,7 +38,8 @@ describe Northpasser::PathBuilder do
   end
 
   it 'recognizes and executes known actions, clearing the path' do
-    resource = Northpasser::RESOURCES.sample
+    resources_set = [Northpasser::V1_RESOURCES, Northpasser::V2_RESOURCES].sample
+    resource = resources_set.sample
     action = Northpasser::ACTIONS.keys.sample
     northpass = new_northpass.send(resource)
 
@@ -46,7 +51,8 @@ describe Northpasser::PathBuilder do
   end
 
   it 'recognizes known exceptions, builds the path, then executes' do
-    resource = Northpasser::RESOURCES.sample
+    resources_set = [Northpasser::V1_RESOURCES, Northpasser::V2_RESOURCES].sample
+    resource = resources_set.sample
     exception = Northpasser::EXCEPTIONS.keys.sample
     northpass = new_northpass.send(resource)
 
@@ -64,12 +70,14 @@ describe Northpasser::PathBuilder do
   end
 
   it 'responds to known resources' do
-    resource = Northpasser::RESOURCES.sample
+    resources_set = [Northpasser::V1_RESOURCES, Northpasser::V2_RESOURCES].sample
+    resource = resources_set.sample
     expect(new_northpass.respond_to?(resource)).to be true
   end
 
   it 'responds to known exceptions' do
-    resource = Northpasser::EXCEPTIONS.keys.sample
+    resources_set = [Northpasser::V1_RESOURCES, Northpasser::V2_RESOURCES].sample
+    resource = resources_set.sample
     expect(new_northpass.respond_to?(resource)).to be true
   end
 
