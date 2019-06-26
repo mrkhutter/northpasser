@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.northpass.com/v1/courses?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    uri: https://api.northpass.com/v1/courses?api_key=
     body:
       encoding: UTF-8
       string: "{}"
@@ -19,27 +19,25 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
       Connection:
       - keep-alive
       Server:
       - nginx
       Date:
-      - Fri, 06 Apr 2018 15:30:57 GMT
+      - Tue, 25 Jun 2019 20:49:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
-      Etag:
-      - W/"44b50f5f5902febdfec13ad86999871c"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - c616b4b9-af29-4e97-a99b-b9a808388d1a
+      - e227a351-c313-4fe6-bfb3-f44e81e72f60
       X-Runtime:
-      - '0.066055'
+      - '0.010458'
       Strict-Transport-Security:
       - max-age=631138519
       X-Content-Type-Options:
@@ -50,6 +48,8 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Trace:
+      - 2BCCF0DFACA4E6ECDA6990704458F361AB42A793CC33B5DDF0EF9DDE2B00
       Vary:
       - Origin
       X-Rack-Cors:
@@ -58,8 +58,70 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"links":{"self":"https://api.northpass.com/v1/courses"},"data":[{"type":"courses","id":"72673479-ad0c-4e81-bb2f-47174ff09396","attributes":{"name":"Getting
-        Started with Pixel (Sample Course)","enrollments_count":0,"list_image_url":"https://d3p3alwwakpeoy.cloudfront.net/api/file/YKu1Zb0fSqmrpsNL7nbu/convert?cache=true\u0026fit=crop\u0026h=500\u0026w=820","course_enrollment_link":"https://shipt.schoolkeep.com/c/071e0fd038cb23f005d5ff3f9519a8266774eafe","share_course_link":"https://shipt.schoolkeep.com/outline/j16njpjy/cover","permalink":"j16njpjy","created_at":"2017-11-10T20:09:53Z","updated_at":"2017-11-10T20:09:53Z"},"relationships":{"categories":{"data":[]},"instructor_partnerships":{"data":[]}},"links":{"self":"https://api.northpass.com/v1/courses/j16njpjy","teaching":"https://app.northpass.com/courses/j16njpjy","build":{"href":"https://app.northpass.com/courses/j16njpjy/builder","methods":["get"]}}},{"type":"courses","id":"11790b45-3b0c-4105-ab91-b4b3e35c53c7","attributes":{"name":"Scheduling","enrollments_count":0,"list_image_url":"https://d3p3alwwakpeoy.cloudfront.net/api/file/pnD6vUv5QyeVxitrYyXa/convert?cache=true\u0026fit=crop\u0026h=500\u0026w=820","course_enrollment_link":"https://shipt.schoolkeep.com/c/b20d883e347735e35bbb96e7ff4e6d08d2c53646","share_course_link":"https://shipt.schoolkeep.com/outline/p4ibygxu/cover","permalink":"p4ibygxu","created_at":"2017-11-10T20:12:21Z","updated_at":"2018-02-20T19:25:00Z"},"relationships":{"categories":{"data":[]},"instructor_partnerships":{"data":[{"type":"instructor_partnerships","id":"c823b52a-bc16-4558-97ab-cb8ceab3a623"}]}},"links":{"self":"https://api.northpass.com/v1/courses/p4ibygxu","teaching":"https://app.northpass.com/courses/p4ibygxu","build":{"href":"https://app.northpass.com/courses/p4ibygxu/builder","methods":["get"]}}}],"included":[]}'
+      string: '{"errors":[{"status":"401","title":"Unauthorized","detail":"You don''t
+        have the necessary credentials","source":{}}]}'
     http_version: 
-  recorded_at: Fri, 06 Apr 2018 15:30:57 GMT
+  recorded_at: Tue, 25 Jun 2019 20:49:16 GMT
+- request:
+    method: get
+    uri: https://api.northpass.com/v1/courses?api_key=
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.northpass.com
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Date:
+      - Tue, 25 Jun 2019 20:49:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 939e4818-a364-4221-907d-dd01915a841a
+      X-Runtime:
+      - '0.012095'
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Trace:
+      - 2B9E0E4113A237B746AD6501966A4299F4A613277428B6AE0C1E2F771B00
+      Vary:
+      - Origin
+      X-Rack-Cors:
+      - miss; no-origin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"status":"401","title":"Unauthorized","detail":"You don''t
+        have the necessary credentials","source":{}}]}'
+    http_version: 
+  recorded_at: Tue, 25 Jun 2019 20:49:39 GMT
 recorded_with: VCR 3.0.3

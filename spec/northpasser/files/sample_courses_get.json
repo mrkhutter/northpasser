@@ -1,0 +1,40 @@
+{
+  "data": {
+    "type": "courses",
+    "id": "ea210647-aa59-49c1-85d1-5cae0ea6eed0",
+    "attributes": {
+      "name": "Northpass Onboarding",
+      "enrollments_count": 0,
+      "course_enrollment_link": "http://academy.northpass.com/c/4a7c9d2142e67018bfe7bfa7d7552f44c0756837",
+      "share_course_link": "http://academy.northpass.com/outline/f24cj7q3/cover",
+      "permalink": "f24cj7q3",
+      "created_at": "2016-01-02T03:04:05Z",
+      "updated_at": "2016-02-03T04:05:06Z"
+    },
+    "relationships": {
+      "categories": {
+        "data": [
+          {
+            "type": "categories",
+            "id": "8270f668-fab9-4d4c-9008-0c08fa87e2bf"
+          }
+        ]
+      },
+      "instructor_partnerships": {
+        "data": [
+
+        ]
+      }
+    },
+    "links": {
+      "self": "https://api.northpass.com/v1/courses/f24cj7q3",
+      "teaching": "https://app.northpass.com/courses/f24cj7q3",
+      "build": {
+        "href": "https://app.northpass.com/courses/f24cj7q3/builder",
+        "methods": [
+          "get"
+        ]
+      }
+    }
+  }
+}
