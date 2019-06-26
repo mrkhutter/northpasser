@@ -4,7 +4,7 @@ require 'csv'
 module Northpasser
   V1_API_URL = "https://api.northpass.com/v1/".freeze
 
-  # These are the resource for the northpass api and can form part of the path
+  # These are the resource for the northpass v1 api and can form part of the path
   RESOURCES = [
     :assignments,
     :categories,
