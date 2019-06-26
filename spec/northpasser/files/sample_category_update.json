@@ -1,0 +1,14 @@
+{
+  "data": {
+    "type": "categories",
+    "id": "8270f668-fab9-4d4c-9008-0c08fa87e2bf",
+    "attributes": {
+      "name": "Silly Strings",
+      "created_at": "2016-01-02T03:04:05Z",
+      "updated_at": "2016-02-03T04:05:06Z"
+    },
+    "links": {
+      "self": "https://api.northpass.com/v1/categories/8270f668-fab9-4d4c-9008-0c08fa87e2bf"
+    }
+  }
+}
