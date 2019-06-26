@@ -97,17 +97,21 @@ describe Northpasser::Request do
       end
 
       it 'reports errors for a missing learners' do
+         WebMock.stub_request(:get, /.*api.northpass.com\/v1\/courses*/)
+          .to_return(status: 404)
+
         northpass = new_northpass.courses.get(id: 'samiam')
 
         expect(northpass[:code]).to eq('404')
-        expect(northpass[:status]).to eq('Not Found')
       end
       
       it 'reports errors for bad params' do
-        northpass = new_northpass.learners.create(data: { foo: 'bar', attributes: {small: "fries"} })
+        bad_params = File.new("spec/northpasser/files/bad_params.json")
+        WebMock.stub_request(:post, /.*api.northpass.com\/v1\/learners*/)
+         .to_return(status: 422, body: bad_params.read)
 
+        northpass = new_northpass.learners.create(data: { foo: 'bar', attributes: {small: "fries"} })
         expect(northpass[:code]).to eq('422')
-        expect(northpass[:status]).to eq('Unprocessable Entity')
         expect(northpass[:content].key?("errors")).to be true
       end
     end
