@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://api.northpass.com/v1/learners/ac2ae6b6-ab15-41b0-883c-5f536a062689?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    uri: https://api.northpass.com/v1/learners/ac2ae6b6-ab15-41b0-883c-5f536a062689?api_key=
     body:
       encoding: UTF-8
       string: "{}"
@@ -19,23 +19,25 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 204
-      message: No Content
+      code: 401
+      message: Unauthorized
     headers:
-      Content-Length:
-      - '0'
       Connection:
       - keep-alive
       Server:
       - nginx
       Date:
-      - Fri, 06 Apr 2018 15:30:58 GMT
+      - Tue, 25 Jun 2019 20:41:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 74a70a52-351b-4b11-9681-fe9680b579cf
+      - 92c67aee-d455-48f5-b5ff-e84536d36db5
       X-Runtime:
-      - '0.165175'
+      - '0.009736'
       Strict-Transport-Security:
       - max-age=631138519
       X-Content-Type-Options:
@@ -46,6 +48,8 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Trace:
+      - 2BA26B63BEE18D506C55974EB732D568E7084F8E473761D302FFB0895600
       Vary:
       - Origin
       X-Rack-Cors:
@@ -54,7 +58,8 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"errors":[{"status":"401","title":"Unauthorized","detail":"You don''t
+        have the necessary credentials","source":{}}]}'
     http_version: 
-  recorded_at: Fri, 06 Apr 2018 15:30:58 GMT
+  recorded_at: Tue, 25 Jun 2019 20:41:10 GMT
 recorded_with: VCR 3.0.3

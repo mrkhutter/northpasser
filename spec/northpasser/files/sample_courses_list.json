@@ -1,0 +1,125 @@
+{
+  "links": {
+    "self": "https://api.northpass.com/v1/courses"
+  },
+  "data": [
+    {
+      "type": "courses",
+      "id": "b685091b-6f65-4c20-9ba8-132b5ffbddde",
+      "attributes": {
+        "name": "Design and Market Your School Site",
+        "enrollments_count": 0,
+        "course_enrollment_link": "http://academy.northpass.com/c/e7d9d8c3f9d3c4fa81201b547ff8f578ae8e9856",
+        "share_course_link": "http://academy.northpass.com/outline/qjcud6ho/cover",
+        "permalink": "qjcud6ho",
+        "created_at": "2016-01-02T03:04:05Z",
+        "updated_at": "2016-02-03T04:05:06Z"
+      },
+      "relationships": {
+        "categories": {
+          "data": [
+            {
+              "type": "categories",
+              "id": "8270f668-fab9-4d4c-9008-0c08fa87e2bf"
+            },
+            {
+              "type": "categories",
+              "id": "a945456c-e54d-4730-82c0-07fc1ddfabfd"
+            }
+          ]
+        },
+        "instructor_partnerships": {
+          "data": [
+
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.northpass.com/v1/courses/qjcud6ho",
+        "teaching": "https://app.northpass.com/courses/qjcud6ho",
+        "build": {
+          "href": "https://app.northpass.com/courses/qjcud6ho/builder",
+          "methods": [
+            "get"
+          ]
+        }
+      }
+    },
+    {
+      "type": "courses",
+      "id": "ea210647-aa59-49c1-85d1-5cae0ea6eed0",
+      "attributes": {
+        "name": "Northpass Onboarding",
+        "enrollments_count": 0,
+        "course_enrollment_link": "http://academy.northpass.com/c/4a7c9d2142e67018bfe7bfa7d7552f44c0756837",
+        "share_course_link": "http://academy.northpass.com/outline/f24cj7q3/cover",
+        "permalink": "f24cj7q3",
+        "created_at": "2016-01-02T03:04:05Z",
+        "updated_at": "2016-02-03T04:05:06Z"
+      },
+      "relationships": {
+        "categories": {
+          "data": [
+            {
+              "type": "categories",
+              "id": "8270f668-fab9-4d4c-9008-0c08fa87e2bf"
+            }
+          ]
+        },
+        "instructor_partnerships": {
+          "data": [
+
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.northpass.com/v1/courses/f24cj7q3",
+        "teaching": "https://app.northpass.com/courses/f24cj7q3",
+        "build": {
+          "href": "https://app.northpass.com/courses/f24cj7q3/builder",
+          "methods": [
+            "get"
+          ]
+        }
+      }
+    },
+    {
+      "type": "courses",
+      "id": "ae84c10c-31d4-4c16-bf25-9c37ecbc6632",
+      "attributes": {
+        "name": "Sell Content with the Commerce Tool",
+        "enrollments_count": 0,
+        "course_enrollment_link": "http://academy.northpass.com/c/f80f6eeb322feab5003e5ed70fc4f35b9b681b4f",
+        "share_course_link": "http://academy.northpass.com/outline/s3p9kahv/cover",
+        "permalink": "s3p9kahv",
+        "created_at": "2016-01-02T03:04:05Z",
+        "updated_at": "2016-02-03T04:05:06Z"
+      },
+      "relationships": {
+        "categories": {
+          "data": [
+
+          ]
+        },
+        "instructor_partnerships": {
+          "data": [
+
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.northpass.com/v1/courses/s3p9kahv",
+        "teaching": "https://app.northpass.com/courses/s3p9kahv",
+        "build": {
+          "href": "https://app.northpass.com/courses/s3p9kahv/builder",
+          "methods": [
+            "get"
+          ]
+        }
+      }
+    }
+  ],
+  "included": [
+
+  ]
+}

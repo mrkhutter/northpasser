@@ -1,0 +1,24 @@
+{
+  "data": {
+    "type": "people",
+    "id": "2119c6c9-31d5-485b-9f7a-2eb9159e8815",
+    "attributes": {
+      "created_at": "2016-02-03T04:05:06Z",
+      "email": "api+faraday@northpass.com",
+      "updated_at": "2016-02-03T04:05:06Z",
+      "unsubscribed": false
+    },
+    "links": {
+      "self": "https://api.northpass.com/v1/people/2119c6c9-31d5-485b-9f7a-2eb9159e8815",
+      "teaching": "https://app.northpass.com/people/2119c6c9-31d5-485b-9f7a-2eb9159e8815"
+    },
+    "relationships": {
+      "school": {
+        "data": {
+          "type": "schools",
+          "id": "5f72a658-292b-4cc1-8507-0f1c5b820427"
+        }
+      }
+    }
+  }
+}

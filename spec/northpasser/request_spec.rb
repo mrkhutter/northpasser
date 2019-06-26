@@ -35,64 +35,83 @@ describe Northpasser::Request do
     end
 
     context 'with, er, some non-exhaustive examples of api calls' do
-      it 'lists all courses', :vcr do
+      it 'lists all courses' do
+
+        courses_response_json = File.new("spec/northpasser/files/sample_courses_list.json")
+        WebMock.stub_request(:get, /.*api.northpass.com\/v1\/courses*/)
+          .to_return(status: 200, body: courses_response_json.read)
+      
         northpass = new_northpass.courses.list
 
         expect(northpass[:code]).to eq('200')
-        expect(northpass[:status]).to eq('OK')
         datagram = northpass[:content]['data'].first
-        expect(datagram['id']).to eq('72673479-ad0c-4e81-bb2f-47174ff09396')
-        expect(datagram['attributes']['name']).to eq('Getting Started with Pixel (Sample Course)')
+        expect(datagram['id']).to eq('b685091b-6f65-4c20-9ba8-132b5ffbddde')
+        expect(datagram['attributes']['name']).to eq('Design and Market Your School Site')
       end
 
-      it 'gets a course', :vcr do
-        northpass = new_northpass.courses.get(id: '11790b45-3b0c-4105-ab91-b4b3e35c53c7')
+      it 'gets a course' do
+        courses_response_json = File.new("spec/northpasser/files/sample_courses_get.json")
+        WebMock.stub_request(:get, /.*api.northpass.com\/v1\/courses*/)
+          .to_return(status: 200, body: courses_response_json.read)
+        
+        northpass = new_northpass.courses.get(id: 'ea210647-aa59-49c1-85d1-5cae0ea6eed0')
 
         expect(northpass[:code]).to eq('200')
-        expect(northpass[:status]).to eq('OK')
         datagram = northpass[:content]['data']
-        expect(datagram['id']).to eq('11790b45-3b0c-4105-ab91-b4b3e35c53c7')
-        expect(datagram['attributes']['name']).to eq('Scheduling')
+        expect(datagram['id']).to eq('ea210647-aa59-49c1-85d1-5cae0ea6eed0')
+        expect(datagram['attributes']['name']).to eq('Northpass Onboarding')
       end
 
-      it 'creates a learner', :vcr do
-        northpass = new_northpass.learners.create(data: { type: 'people', attributes: {email: "driver@shipt.com"} })
+      it 'creates a learner' do
+        learners_response_json = File.new("spec/northpasser/files/sample_learner_create.json")
+        WebMock.stub_request(:post, /.*api.northpass.com\/v1\/learners*/)
+          .to_return(status: 201, body: learners_response_json.read)
+        
+        northpass = new_northpass.learners.create(data: { type: 'people', attributes: {email: "api+faraday@northpass.com"} })
 
         expect(northpass[:code]).to eq('201')
-        expect(northpass[:status]).to eq('Created')
         datagram = northpass[:content]['data']
-        expect(datagram['attributes']['email']).to eq('driver@shipt.com')
+        expect(datagram['attributes']['email']).to eq('api+faraday@northpass.com')
         expect(datagram['attributes']['unsubscribed']).to eq(false)
       end
 
-      it 'updates a category', :vcr do
-        northpass = new_northpass.categories.update(id: 'ab9ca8a8-14a1-49cb-870c-8cb7e0cf1fd9', data: {attributes: {name: 'silly strings'}})
+      it 'updates a category' do
+        categories_response_json = File.new("spec/northpasser/files/sample_category_update.json")
+        WebMock.stub_request(:put, /.*api.northpass.com\/v1\/categories*/)
+          .to_return(status: 200, body: categories_response_json.read)
+        
+        northpass = new_northpass.categories.update(id: '8270f668-fab9-4d4c-9008-0c08fa87e2bf', data: {attributes: {name: 'Silly Strings'}})
 
         expect(northpass[:code]).to eq('200')
-        expect(northpass[:status]).to eq('OK')
         datagram = northpass[:content]['data']
-        expect(datagram['attributes']['name']).to eq('silly strings')
+        expect(datagram['attributes']['name']).to eq('Silly Strings')
       end
 
-      it 'deletes a category', :vcr do
-        northpass = new_northpass.learners.delete(id: 'ac2ae6b6-ab15-41b0-883c-5f536a062689')
+      it 'deletes a category' do
+        WebMock.stub_request(:delete, /.*api.northpass.com\/v1\/categories*/)
+          .to_return(status: 204)
+ 
+        northpass = new_northpass.categories.delete(id: 'ac2ae6b6-ab15-41b0-883c-5f536a062689')
 
         expect(northpass[:code]).to eq('204')
-        expect(northpass[:status]).to eq('No Content')
       end
 
-      it 'reports errors for a missing learners', :vcr do
+      it 'reports errors for a missing learners' do
+         WebMock.stub_request(:get, /.*api.northpass.com\/v1\/courses*/)
+          .to_return(status: 404)
+
         northpass = new_northpass.courses.get(id: 'samiam')
 
         expect(northpass[:code]).to eq('404')
-        expect(northpass[:status]).to eq('Not Found')
       end
       
-      it 'reports errors for bad params', :vcr do
-        northpass = new_northpass.learners.create(data: { foo: 'bar', attributes: {small: "fries"} })
+      it 'reports errors for bad params' do
+        bad_params = File.new("spec/northpasser/files/bad_params.json")
+        WebMock.stub_request(:post, /.*api.northpass.com\/v1\/learners*/)
+         .to_return(status: 422, body: bad_params.read)
 
+        northpass = new_northpass.learners.create(data: { foo: 'bar', attributes: {small: "fries"} })
         expect(northpass[:code]).to eq('422')
-        expect(northpass[:status]).to eq('Unprocessable Entity')
         expect(northpass[:content].key?("errors")).to be true
       end
     end

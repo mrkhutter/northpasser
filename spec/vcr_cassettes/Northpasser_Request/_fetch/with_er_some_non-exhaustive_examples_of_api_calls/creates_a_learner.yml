@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.northpass.com/v1/learners?api_key=IOm5HueZfihdVq3HPDNy0eWfI
+    uri: https://api.northpass.com/v1/learners?api_key=
     body:
       encoding: UTF-8
       string: '{"data":{"type":"people","attributes":{"email":"driver@shipt.com"}}}'
@@ -19,15 +19,15 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 409
-      message: Conflict
+      code: 401
+      message: Unauthorized
     headers:
       Connection:
       - keep-alive
       Server:
       - nginx
       Date:
-      - Fri, 06 Apr 2018 15:30:57 GMT
+      - Tue, 25 Jun 2019 20:41:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -35,9 +35,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f006d6b0-98a5-4fd4-ac02-d640a4ffd798
+      - d73a23a8-ebb9-40b9-8f87-a0b7def1229c
       X-Runtime:
-      - '0.072985'
+      - '0.011530'
       Strict-Transport-Security:
       - max-age=631138519
       X-Content-Type-Options:
@@ -48,6 +48,8 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Trace:
+      - 2B1D5B5DB187B47D50B838CAA211DE108260E8A60F76366410F358784501
       Vary:
       - Origin
       X-Rack-Cors:
@@ -56,8 +58,8 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"errors":[{"status":"409","title":"Record Not Unique","detail":"A
-        record with the given email has already been taken","meta":{"original":{"uuid":"ac2ae6b6-ab15-41b0-883c-5f536a062689","type":"learners"}},"source":{"pointer":"/data/attributes/email"}}]}'
+      string: '{"errors":[{"status":"401","title":"Unauthorized","detail":"You don''t
+        have the necessary credentials","source":{}}]}'
     http_version: 
-  recorded_at: Fri, 06 Apr 2018 15:30:57 GMT
+  recorded_at: Tue, 25 Jun 2019 20:41:09 GMT
 recorded_with: VCR 3.0.3
