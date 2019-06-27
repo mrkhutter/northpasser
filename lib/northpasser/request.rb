@@ -33,7 +33,7 @@ module Northpasser
 
     private
 
-    def validate_input(nGorthpass, action, params)
+    def validate_input(northpass, action, params)
       northpass.is_a?(Northpass) &&
         !northpass.path.nil? &&
         !northpass.token.nil? &&

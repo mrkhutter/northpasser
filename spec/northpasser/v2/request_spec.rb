@@ -40,7 +40,7 @@ describe Northpasser::Request do
         activities_response_json = File.new("spec/northpasser/files/sample_activities_list.json")
         WebMock.stub_request(:get, /.*api.northpass.com\/v2\/activities*/)
           .to_return(status: 200, body: activities_response_json.read)
-        binding.pry 
+        
         northpass = new_northpass.activities.list
 
         expect(northpass[:code]).to eq('200')
