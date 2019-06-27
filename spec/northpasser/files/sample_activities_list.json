@@ -1,8 +1,18 @@
 {
- "links": {
-    "self": "https://api.northpass.com/v2/courses/ea210647-aa59-49c1-85d1-5cae0ea6eed0/activities"
+  "links": {
+    "self": "https://api.northpass.com/v2/activities"
   },
   "data": [
+    {
+      "type": "activities",
+      "id": "a5537258-0873-4da3-98c2-805d7d31a23d",
+      "attributes": {
+        "title": "Optimal price point"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/a5537258-0873-4da3-98c2-805d7d31a23d"
+      }
+    },
     {
       "type": "activities",
       "id": "b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5",
@@ -11,6 +21,16 @@
       },
       "links": {
         "self": "https://api.northpass.com/v2/activities/b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5"
+      }
+    },
+    {
+      "type": "activities",
+      "id": "eb6be363-eef1-4235-aae1-46cf5851c6e5",
+      "attributes": {
+        "title": "Why design matters"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/eb6be363-eef1-4235-aae1-46cf5851c6e5"
       }
     },
     {

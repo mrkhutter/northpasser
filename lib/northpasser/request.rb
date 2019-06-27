@@ -33,7 +33,7 @@ module Northpasser
 
     private
 
-    def validate_input(northpass, action, params)
+    def validate_input(nGorthpass, action, params)
       northpass.is_a?(Northpass) &&
         !northpass.path.nil? &&
         !northpass.token.nil? &&
@@ -43,7 +43,7 @@ module Northpasser
     end
 
     def construct_uri(northpass)
-      base_url = V1_API_URL
+      base_url = northpass.version_url #V1_API_URL
       path = northpass.path.map(&:to_s).map { |p| p.gsub('_', '-') }.join('/')
       object_id = "/#{self.params.delete(:id)}" if self.params.key?(:id)
       token = northpass.token

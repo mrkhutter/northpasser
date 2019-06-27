@@ -40,18 +40,18 @@ describe Northpasser::Request do
         activities_response_json = File.new("spec/northpasser/files/sample_activities_list.json")
         WebMock.stub_request(:get, /.*api.northpass.com\/v2\/activities*/)
           .to_return(status: 200, body: activities_response_json.read)
-      
+        binding.pry 
         northpass = new_northpass.activities.list
 
         expect(northpass[:code]).to eq('200')
         datagram = northpass[:content]['data'].first
-        expect(datagram['id']).to eq('b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5')
-        expect(datagram['attributes']['title']).to eq('Welcome to Northpass')
+        expect(datagram['id']).to eq('a5537258-0873-4da3-98c2-805d7d31a23d')
+        expect(datagram['attributes']['title']).to eq('Optimal price point')
       end
 
       it 'gets an event' do
-        courses_response_json = File.new("spec/northpasser/files/sample_courses_get.json")
-        WebMock.stub_request(:get, /.*api.northpass.com\/v2\/courses*/)
+        events_response_json = File.new("spec/northpasser/files/sample_events_get.json")
+        WebMock.stub_request(:get, /.*api.northpass.com\/v2\/events*/)
           .to_return(status: 200, body: courses_response_json.read)
         
         northpass = new_northpass.courses.get(id: 'ea210647-aa59-49c1-85d1-5cae0ea6eed0')

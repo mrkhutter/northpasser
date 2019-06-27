@@ -2,7 +2,7 @@ module Northpasser
   module PathBuilder
     def self.included(_)
       class_exec do
-        attr_accessor :path
+        attr_accessor :path, :version_url
       end
     end
 
@@ -26,6 +26,7 @@ module Northpasser
       if known_action?(name)
         execute_request(ACTIONS[name], args.first)
       elsif known_resource?(name)
+        build_version_url(name)
         build_path(name, args.first)
       elsif known_exception?(name)
         build_path(EXCEPTIONS[name][:path], nil)
@@ -63,7 +64,15 @@ module Northpasser
     end
 
     def known_resource?(name)
-      V1_RESOURCES.include?(name) || V2_RESOURCES.include?(name)
+      known_v1_resource?(name) || known_v2_resource?(name)
+    end
+
+    def known_v1_resource?(name)
+      V1_RESOURCES.include?(name)
+    end
+
+    def known_v2_resource?(name)
+      V2_RESOURCES.include?(name)
     end
 
     def known_exception?(name)
@@ -78,6 +87,14 @@ module Northpasser
       )
       clear_path
       req.fetch
+    end
+
+    def build_version_url(name)
+      self.version_url = V1_API_URL
+      if known_v2_resource?(name)
+        self.version_url = V2_API_URL
+      end
+      self
     end
 
     def build_path(resource, id)
