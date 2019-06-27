@@ -1,0 +1,47 @@
+{
+  "links": {
+    "self": "https://api.northpass.com/v2/activities"
+  },
+  "data": [
+    {
+      "type": "activities",
+      "id": "a5537258-0873-4da3-98c2-805d7d31a23d",
+      "attributes": {
+        "title": "Optimal price point"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/a5537258-0873-4da3-98c2-805d7d31a23d"
+      }
+    },
+    {
+      "type": "activities",
+      "id": "b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5",
+      "attributes": {
+        "title": "Welcome to Northpass"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5"
+      }
+    },
+    {
+      "type": "activities",
+      "id": "eb6be363-eef1-4235-aae1-46cf5851c6e5",
+      "attributes": {
+        "title": "Why design matters"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/eb6be363-eef1-4235-aae1-46cf5851c6e5"
+      }
+    },
+    {
+      "type": "activities",
+      "id": "95f17021-4a9b-4578-877c-0edb2f092097",
+      "attributes": {
+        "title": "How to build an effective course"
+      },
+      "links": {
+        "self": "https://api.northpass.com/v2/activities/95f17021-4a9b-4578-877c-0edb2f092097"
+      }
+    }
+  ]
+}

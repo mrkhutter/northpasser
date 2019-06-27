@@ -14,7 +14,11 @@ describe Northpasser do
   end
 
   it 'has a RESOURCES constant defining known api resources' do
-    expect(Northpasser::RESOURCES).to_not be nil
+    expect(Northpasser::V1_RESOURCES).to_not be nil
+  end
+  
+  it 'has a RESOURCES constant defining known api resources' do
+    expect(Northpasser::V2_RESOURCES).to_not be nil
   end
 
   it 'has an annoying EXCEPTIONS constant defining known api exceptions' do

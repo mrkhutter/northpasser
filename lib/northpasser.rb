@@ -1,5 +1,7 @@
 require "northpasser/version"
-require "northpasser/constants"
+require "northpasser/versionless_constants"
+require "northpasser/v1_constants"
+require "northpasser/v2_constants"
 require "northpasser/path_builder"
 require "northpasser/request"
 

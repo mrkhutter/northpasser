@@ -1,0 +1,12 @@
+{
+  "data": {
+    "type": "activities",
+    "id": "b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5",
+    "attributes": {
+      "title": "Welcome to Northpass"
+    },
+    "links": {
+      "self": "https://api.northpass.com/v2/activities/b21fe6b7-8f2b-40e8-a058-f00f1a53e2b5"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "data": {
+    "type": "people",
+    "id": "216e9db2-e25b-45c8-8b16-25ffa2eabad7",
+    "attributes": {
+      "created_at": "2016-02-03T04:05:06Z",
+      "custom_avatar_url": "https://secure.gravatar.com/avatar/145d91397b5940d06343b51d4761eb08?d=identicon&s=200",
+      "email": "api+faraday@northpass.com",
+      "registration_status": "not_activated",
+      "unsubscribed": false,
+      "updated_at": "2016-02-03T04:05:06Z"
+    },
+    "links": {
+      "self": {
+        "href": "https://api.northpass.com/v1/people/216e9db2-e25b-45c8-8b16-25ffa2eabad7",
+        "methods": [
+          "get",
+          "delete"
+        ]
+      },
+      "teaching": {
+        "href": "https://app.northpass.com/people/216e9db2-e25b-45c8-8b16-25ffa2eabad7",
+        "methods": [
+          "get",
+          "patch"
+        ]
+      }
+    },
+    "relationships": {
+      "partnerships": {
+        "data": [
+          {
+            "type": "partnerships",
+            "id": "abb2cfe0-0fad-4f43-a02e-326ec5a8b3f1"
+          }
+        ]
+      },
+      "school": {
+        "data": {
+          "type": "schools",
+          "id": "5f72a658-292b-4cc1-8507-0f1c5b820427"
+        }
+      }
+    }
+  }
+}
