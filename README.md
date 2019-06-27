@@ -184,17 +184,13 @@ use `bin/console` for an interactive prompt that allows you to experiment with
 the gem and real API responses.
 
 Use `rake spec` to run the tests. The tests don't make external requests but
-rather use VCR for stubbed responses. If you want to play with the tests and
-get real API responses (perhaps to extend the suite or for a new feature) then
-you'll need to have an API token in the env as described above.
+rather use WebMock to mock Northpass API calls. This allows you to run and develop
+directly against the Northpass API without needing a valid Northpass API token.
+If you want to play with the tests and get real API responses (perhaps to extend the suite or for a new feature) 
+then you'll need to have an API token in the env as described above.
 
 The current test suite is far from exhaustive and could do with some
 love.
-
-**NB: If you have implemented a feature that requires a new cassette, make sure
-you change the uri referenced by the cassette you added to remove the API token
-if you have updated the environment to use your token. Otherwise your API token
-will be in publically visible from the code in this repo.**
 
 ## Contributing
 
